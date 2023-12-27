@@ -1,8 +1,8 @@
 const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = require("../config/connectDB");
 
-const User = sequelize.define(
-  "User",
+const UserInfo = sequelize.define(
+  "UserInfo",
   {
     firstName: {
       type: DataTypes.STRING,
@@ -45,4 +45,4 @@ const User = sequelize.define(
 //   console.error('Unable to create User table : ', error);
 // });
 
-module.exports = User;
+module.exports = UserInfo;
