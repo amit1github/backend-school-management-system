@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const chalk = require("chalk");
 const dotenv = require("dotenv");
-const sequelize = require("./config/connectDB.js");
+require("./config/connectDB.js");
 
 const app = express();
 app.use(express.json());
@@ -21,15 +21,6 @@ app.get("/", async (req, res) => {
 });
 
 // app.use("/api/v1",)
-
-sequelize
-  .sync()
-  .then(() => {
-    console.log(chalk.greenBright("Database synchronized successfully!"));
-  })
-  .catch((error) => {
-    console.error("Unable to synchronize the database: ", error);
-  });
 
 const PORT = process.env.PORT || 6000;
 
