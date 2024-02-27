@@ -17,4 +17,4 @@ const sequelize = new Sequelize("school_management_system", "root", "", {
   }
 })();
 
-module.exports = sequelize;
+module.exports = { sequelize };

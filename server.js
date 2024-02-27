@@ -3,6 +3,7 @@ const cors = require("cors");
 const chalk = require("chalk");
 const dotenv = require("dotenv");
 require("./config/connectDB.js");
+const routes = require("./routes/mainRoute");
 
 const app = express();
 app.use(express.json());
@@ -16,11 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 dotenv.config({ path: "./config/.env" });
 
-app.get("/", async (req, res) => {
-  res.send("Hello developer! API is working.");
-});
-
-// app.use("/api/v1",)
+app.use("/api/v1", routes);
 
 const PORT = process.env.PORT || 6000;
 
